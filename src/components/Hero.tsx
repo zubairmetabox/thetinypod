@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { IMAGES } from "@/lib/images";
 
 export default function Hero() {
@@ -19,26 +22,44 @@ export default function Hero() {
 
       <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto">
         {/* Eyebrow */}
-        <p className="text-sm font-medium tracking-widest uppercase text-[#5e5e5e] mb-6">
+        <motion.p
+          className="text-sm font-medium tracking-widest uppercase text-[#5e5e5e] mb-6"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
           Introducing
-        </p>
+        </motion.p>
 
         {/* Main headline */}
-        <h1
+        <motion.h1
           className="text-6xl md:text-8xl lg:text-9xl font-light leading-none tracking-tight mb-6"
           style={{ fontFamily: "var(--font-cormorant)" }}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
         >
           Say hello to{" "}
           <span className="italic">tinyPod.</span>
-        </h1>
+        </motion.h1>
 
         {/* Tagline */}
-        <p className="text-lg md:text-xl text-[#5e5e5e] max-w-lg mb-10">
+        <motion.p
+          className="text-lg md:text-xl text-[#5e5e5e] max-w-lg mb-10"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
           Your phone away from phone.
-        </p>
+        </motion.p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 mb-16">
+        <motion.div
+          className="flex flex-col sm:flex-row items-center gap-4 mb-16"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.55 }}
+        >
           <Link
             href="#pricing"
             className="px-8 py-3.5 bg-[#0a0a08] text-white text-sm font-semibold rounded-full hover:bg-[#1a1a1a] transition-colors"
@@ -51,10 +72,15 @@ export default function Hero() {
           >
             Learn more
           </Link>
-        </div>
+        </motion.div>
 
         {/* Product image */}
-        <div className="relative w-full max-w-2xl mx-auto">
+        <motion.div
+          className="relative w-full max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 40, scale: 0.97 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+        >
           <Image
             src={IMAGES.pod}
             alt="tinyPod — Apple Watch music pod"
@@ -64,7 +90,7 @@ export default function Hero() {
             priority
             unoptimized
           />
-        </div>
+        </motion.div>
       </div>
 
       {/* Scroll hint */}

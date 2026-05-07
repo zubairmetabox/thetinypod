@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import FadeIn from "@/components/FadeIn";
 
 const FAQS = [
   {
@@ -66,7 +67,7 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-28 bg-white">
       <div className="max-w-3xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <FadeIn className="text-center mb-16">
           <p className="text-sm font-medium tracking-widest uppercase text-[#5e5e5e] mb-4">
             FAQ
           </p>
@@ -77,7 +78,7 @@ export default function FAQ() {
             Questions &{" "}
             <span className="italic">answers.</span>
           </h2>
-        </div>
+        </FadeIn>
 
         <div className="border-t border-[#ededed]">
           {FAQS.map((item) => (

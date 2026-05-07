@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { IMAGES } from "@/lib/images";
+import FadeIn from "@/components/FadeIn";
 
 const APPS = [
   { name: "Music",       src: IMAGES.apps.music },
@@ -23,7 +24,7 @@ export default function AppGrid() {
     <section id="apps" className="py-28 bg-[#f5f5f5]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+        <FadeIn className="text-center mb-16">
           <p className="text-sm font-medium tracking-widest uppercase text-[#5e5e5e] mb-4">
             Everything you need
           </p>
@@ -35,26 +36,28 @@ export default function AppGrid() {
             <br />
             <span className="italic">on your wrist.</span>
           </h2>
-        </div>
+        </FadeIn>
 
         {/* Grid */}
         <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-7 gap-6 justify-items-center">
-          {APPS.map((app) => (
-            <div key={app.name} className="flex flex-col items-center gap-2 group">
-              <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl overflow-hidden bg-white shadow-sm group-hover:shadow-md transition-shadow">
-                <Image
-                  src={app.src}
-                  alt={app.name}
-                  width={64}
-                  height={64}
-                  className="w-full h-full object-cover"
-                  unoptimized
-                />
+          {APPS.map((app, i) => (
+            <FadeIn key={app.name} delay={i * 0.04} direction="up">
+              <div className="flex flex-col items-center gap-2 group">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl overflow-hidden bg-white shadow-sm group-hover:shadow-md transition-shadow">
+                  <Image
+                    src={app.src}
+                    alt={app.name}
+                    width={64}
+                    height={64}
+                    className="w-full h-full object-cover"
+                    unoptimized
+                  />
+                </div>
+                <span className="text-xs text-[#5e5e5e] text-center leading-tight">
+                  {app.name}
+                </span>
               </div>
-              <span className="text-xs text-[#5e5e5e] text-center leading-tight">
-                {app.name}
-              </span>
-            </div>
+            </FadeIn>
           ))}
         </div>
 

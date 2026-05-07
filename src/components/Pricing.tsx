@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FadeIn from "@/components/FadeIn";
 
 const PLANS = [
   {
@@ -62,7 +63,7 @@ export default function Pricing() {
     <section id="pricing" className="py-28 bg-[#f5f5f5]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+        <FadeIn className="text-center mb-16">
           <p className="text-sm font-medium tracking-widest uppercase text-[#5e5e5e] mb-4">
             Pricing
           </p>
@@ -74,12 +75,12 @@ export default function Pricing() {
             <br />
             <span className="italic">pricing.</span>
           </h2>
-        </div>
+        </FadeIn>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {PLANS.map((plan) => (
+          {PLANS.map((plan, i) => (
+            <FadeIn key={plan.name} delay={i * 0.08}>
             <div
-              key={plan.name}
               className={`rounded-3xl p-7 flex flex-col gap-6 ${
                 plan.highlight
                   ? "bg-[#0a0a08] text-white"
@@ -139,6 +140,7 @@ export default function Pricing() {
                 {plan.cta}
               </Link>
             </div>
+            </FadeIn>
           ))}
         </div>
 
