@@ -110,7 +110,7 @@ export default function ProductShowcase() {
               <p className="text-4xl font-semibold text-[#0a0a08] mb-6">${price}</p>
               <a
                 href="#pricing"
-                className="inline-flex items-center justify-center px-8 py-3.5 bg-[#2060ff] text-white text-sm font-semibold rounded-full hover:bg-blue-700 transition-colors"
+                className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-3.5 bg-[#2060ff] text-white text-sm font-semibold rounded-full hover:bg-blue-700 transition-colors"
               >
                 Add to cart
               </a>

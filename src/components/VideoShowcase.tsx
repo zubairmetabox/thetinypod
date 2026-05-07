@@ -83,7 +83,7 @@ export default function VideoShowcase() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
           {DEMOS.map((d) => (
             <VideoCard key={d.title} {...d} />
           ))}

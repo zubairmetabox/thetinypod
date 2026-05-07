@@ -39,7 +39,7 @@ export default function AppGrid() {
         </FadeIn>
 
         {/* Grid */}
-        <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-7 gap-6 justify-items-center">
+        <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-7 gap-4 sm:gap-6 justify-items-center">
           {APPS.map((app, i) => (
             <FadeIn key={app.name} delay={i * 0.04} direction="up">
               <div className="flex flex-col items-center gap-2 group">

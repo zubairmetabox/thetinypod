@@ -33,7 +33,7 @@ export default function Hero() {
 
         {/* Main headline */}
         <motion.h1
-          className="text-6xl md:text-8xl lg:text-9xl font-light leading-none tracking-tight mb-6"
+          className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-light leading-[1.05] tracking-tight mb-6"
           style={{ fontFamily: "var(--font-cormorant)" }}
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
